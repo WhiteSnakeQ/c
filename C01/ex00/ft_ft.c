@@ -6,11 +6,23 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:58:14 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 11:31:30 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 16:48:57 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "stdio.h"
 
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
+}
+
+int	main(void)
+{
+	int	i;
+
+	i = 10;
+	printf("i = %d before func\n", i);
+	ft_ft(&i);
+	printf("i = %d after func\n", i);
 }

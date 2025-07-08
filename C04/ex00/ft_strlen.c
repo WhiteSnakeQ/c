@@ -6,16 +6,16 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 06:20:57 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 06:21:37 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:59:28 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str && str[i])
+	while (str[i])
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 03:51:17 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 04:06:52 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 18:29:58 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,65 @@ char *ft_strcat(char *dest, char *src)
 
 	i = -1;
 	dest_len = str_len(dest);
-    while (src && src[++i] != '\0')
+    while (src[++i])
 		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
-
     return dest;
 }
 
 int	main(void)
 {
-	char	s1[20], s2[20];
+	{
+	char	dest1[50] = "dest";
+	char	dest2[50] = "dest";
+	char	src[50] = "hello world";
 
-	s1[0] = 'e';
-	s1[1] = 'w';
-	s1[2] = 'r';
-	s1[3] = '\0';
+	printf("|%s| |%s| before\n", dest1, dest2);
+	printf("|%s| |%s| after\n", ft_strcat(dest1, src), strcat(dest2, src));
+	printf("|%s| |%s| dest\n", dest1, dest2);
+	printf("\n\n");
+	}
 
-	s2[0] = 'q';
-	s2[1] = 'a';
-	s2[2] = 'z';
-	s2[3] = '\0';
-	strcat(s1, s2);
-	printf("%s - %s\n", s1, s2);
+	{
+	char	dest1[50] = "dest";
+	char	dest2[50] = "dest";
+	char	src[50] = "h";
+
+	printf("|%s| |%s| before\n", dest1, dest2);
+	printf("|%s| |%s| after\n", ft_strcat(dest1, src), strcat(dest2, src));
+	printf("|%s| |%s| dest\n", dest1, dest2);
+	printf("\n\n");
+	}
+	{
+	char	dest1[50] = "dest";
+	char	dest2[50] = "dest";
+	char	src[50] = "";
+
+	printf("|%s| |%s| before\n", dest1, dest2);
+	printf("|%s| |%s| after\n", ft_strcat(dest1, src), strcat(dest2, src));
+	printf("|%s| |%s| dest\n", dest1, dest2);
+	printf("\n\n");
+	}
+
+	{
+	char	dest1[50] = "";
+	char	dest2[50] = "";
+	char	src[50] = "hello world";
+
+	printf("|%s| |%s| before\n", dest1, dest2);
+	printf("|%s| |%s| after\n", ft_strcat(dest1, src), strcat(dest2, src));
+	printf("|%s| |%s| dest\n", dest1, dest2);
+	printf("\n\n");
+	}
+
+	{
+	char	dest1[50] = "";
+	char	dest2[50] = "";
+	char	src[50] = "";
+
+	printf("|%s| |%s| before\n", dest1, dest2);
+	printf("|%s| |%s| after\n", ft_strcat(dest1, src), strcat(dest2, src));
+	printf("|%s| |%s| dest\n", dest1, dest2);
+	printf("\n\n");
+	}
 }

@@ -6,9 +6,12 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:18:44 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 14:44:31 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 17:40:04 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "stdio.h"
+#include "string.h"
 
 int	ft_str_is_alpha(char *str)
 {
@@ -21,4 +24,18 @@ int	ft_str_is_alpha(char *str)
 			return (0);
 	}
 	return (1);
+}
+
+int	main(void)
+{
+	char	*str;
+
+	str = "HelloWorld";
+	printf("%s - only alpha %d\n", str, ft_str_is_alpha(str));
+	str = "51244214";
+	printf("%s - only alpha %d\n", str, ft_str_is_alpha(str));
+	str = "";
+	printf("%s - only alpha %d\n", str, ft_str_is_alpha(str));
+	str = "look on this";
+	printf("%s - only alpha %d\n", str, ft_str_is_alpha(str));
 }

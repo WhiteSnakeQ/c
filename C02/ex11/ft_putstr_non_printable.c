@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 01:27:42 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 13:26:54 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 18:11:22 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,12 @@ void	ft_putstr_non_printable(char *str)
 			put_char(HEXTAB[str[index] % 16]);
 		}
 	}
+}
+
+int	main(void)
+{
+	ft_putstr_non_printable("Coucou\ntu vas bien ?");
+	write(1, "\n", 1);
+	ft_putstr_non_printable("He\vll\to wo\br\tld\n");
+	write(1, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 04:24:31 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 05:06:11 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:13:44 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,45 +19,142 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str && str[i])
+	while (str[i])
 		i++;
 	return(i);
 }
 
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	size_dest;
-	int	size_src;
+	unsigned int	i;
+	unsigned int	size_dest;
+	unsigned int	size_src;
 
 	size_dest = ft_strlen(dest);
 	size_src = ft_strlen(src);
-	i = -1;
+	i = 0;
 	if (size_dest < size)
 		size_src += size_dest;
 	else
 		size_src += size;
-	while (dest && dest[++i] && size > i + (size_dest + 1))
+	while (src[i] && size > i + (size_dest + 1))
+	{
 		dest[size_dest + i] = src[i];
+		i++;
+	}
 	dest[size_dest + i] = '\0';
 	return (size_src);
 }
 
 int	main(void)
 {
-	char	s1[40];
-	char	s2[40];
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "sda";
+		int		i = 4;
 
-	s1[0] = 'e';
-	s1[1] = 'w';
-	s1[2] = 'r';
-	s1[3] = '\0';
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
 
-	s2[0] = 'q';
-	s2[1] = 'a';
-	s2[2] = 'z';
-	s2[3] = '\0';
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "sda";
+		int		i = 9;
 
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
 
-	printf("%d\n%s\n%s\n",	ft_strlcat(s1, s2, 1), s1,s2);
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "hello world";
+		int		i = 9;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "hello world";
+		int		i = 0;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "hello world";
+		int		i = 27;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "dest";
+		char	dest1[50] = "dest";
+		char	*src = "";
+		int		i = 27;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "";
+		char	dest1[50] = "";
+		char	*src = "q12w";
+		int		i = 27;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "";
+		char	dest1[50] = "";
+		char	*src = "";
+		int		i = 27;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "f";
+		char	dest1[50] = "f";
+		char	*src = "f";
+		int		i = 0;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
+
+	{
+		char	dest[50] = "f";
+		char	dest1[50] = "f";
+		char	*src = "f";
+		int		i = 2;
+
+		printf("dest - %s | i = %d\n", dest, i);
+		printf("%s %d\n%s %ld\n", dest, ft_strlcat(dest, src, i), dest1, strlcat(dest1, src, i));
+		printf("\n\n");
+	}
 }
