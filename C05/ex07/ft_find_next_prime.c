@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 06:57:59 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 22:14:33 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:56:08 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,15 @@ int	ft_find_next_prime(int nb)
 		return (nb);
 	else
 		return (ft_find_next_prime(nb + 1));
+}
+
+int	main(void)
+{
+	int	i;
+
+	i = -2;
+	while (++i < 50)
+	{
+		printf("prime %d\n", ft_find_next_prime(i));
+	}
 }

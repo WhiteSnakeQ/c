@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:45:03 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 22:09:26 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:49:45 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,26 @@ int	ft_fibonacci(int index)
 		return (1);
 	c = fibbonaci(c, 1, index - 2);
 	return (c);
+}
+
+int	main(void)
+{
+	int	i;
+
+	i = 5;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = -1;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 0;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 1;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 2;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 3;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 10;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
+	i = 20;
+	printf("fibo n = %d | res = %d\n", i, ft_fibonacci(i));
 }

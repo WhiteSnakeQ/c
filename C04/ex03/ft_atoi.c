@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 06:29:08 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 06:49:14 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:33:56 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,63 @@ int		ft_atoi(char *str)
 
 int	main(void)
 {
-	printf("%d\n", ft_atoi("        - ---+--+1234ab567"));
-	return (0);
+	{
+		char	*str = "123a456";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "a123";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = " 123a456";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "-+123";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "+-123";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "2147483647";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "-2147483648";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "2147483648";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "-2147483649 str,";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
 }

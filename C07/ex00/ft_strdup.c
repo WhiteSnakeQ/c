@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:20:30 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 05:48:40 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:59:31 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ int	main(void)
 	char	*str;
 
 	str = ft_strdup("l");
+	printf("%s\n", str);
+	free(str);
+
+	str = ft_strdup("124310942805823");
+	printf("%s\n", str);
+	free(str);
+
+	str = ft_strdup("");
 	printf("%s\n", str);
 	free(str);
 }

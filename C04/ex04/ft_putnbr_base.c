@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 06:50:10 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 20:53:07 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 20:24:49 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,32 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(100, "0123456789abvdef");
+	ft_putnbr_base(42, "0123456789abvdef");
+	printf("\n");
+	ft_putnbr_base(-10, "0123456789abvdef");
+	printf("\n");
+	ft_putnbr_base(2147483647, "0123456789abcdef");
+	printf("\n");
+	ft_putnbr_base(-2147483648, "0123456789abcdef");
+	printf("\n");
+	ft_putnbr_base(42, "0123456789");
+	printf("\n");
+	ft_putnbr_base(-10, "0123456789");
+	printf("\n");
+	ft_putnbr_base(2147483647, "0123456789");
+	printf("\n");
+	ft_putnbr_base(-2147483648, "0123456789");
+	printf("\n");
+	ft_putnbr_base(0, "0123456789");
+	printf("\n");
+	ft_putnbr_base(0, "0123456789abccdef");
+	printf("(nothing)\n");
+	ft_putnbr_base(0, "0123456789ab+cdef");
+	printf("(nothing)\n");
+	ft_putnbr_base(0, "0123456789ab-cdef");
+	printf("(nothing)\n");
+	ft_putnbr_base(0, "0");
+	printf("(nothing)\n");
+	ft_putnbr_base(0, "");
+	printf("(nothing)\n");
 }

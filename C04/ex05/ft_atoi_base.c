@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 20:55:03 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 23:47:03 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:37:54 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_valid_base(char *base, int size)
 		curr = i;
 		if (base[i] == '+' || base[i] == '-')
 			return (1);
-		if (base[i] < 32 || base[i] > 126)
+		if (base[i] < 33 || base[i] > 126)
 			return (1);
 		while (++curr < size)
 		{
@@ -110,4 +110,14 @@ int	ft_atoi_base(char *str, char *base)
 int	main(void)
 {
 	printf("%d\n", ft_atoi_base("+-00000 1 1010", "01"));
+	printf("%d\n", ft_atoi_base("+-101010", "10"));
+	printf("%d\n", ft_atoi_base(" \t \t +101010", "01"));
+	printf("%d\n", ft_atoi_base("+-2147483648", "0123456789"));
+	printf("%d\n", ft_atoi_base("+2147483647", "0123456789"));
+
+	printf("%d\n", ft_atoi_base("+2147483647", "01123456789"));
+	printf("%d\n", ft_atoi_base("+2147483647", "01+23456789"));
+	printf("%d\n", ft_atoi_base("+2147483647", "0123-456789"));
+	printf("%d\n", ft_atoi_base("+2147483647", "012345 6789"));
+	printf("%d\n", ft_atoi_base("+2147483647", "012345  6789"));
 }

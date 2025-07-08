@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:33:57 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 05:48:57 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 20:05:26 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	*ft_range(int min, int max)
 {
-	int	tab_size;
-	int	i;
-	int	*tab;
+	long	tab_size;
+	int		i;
+	int		*tab;
 
 	if (max <= min)
 		return (NULL);
@@ -33,5 +33,25 @@ int	*ft_range(int min, int max)
 
 int	main(void)
 {
-	ft_range(10, 15);
+	int	*tab;
+	long	min;
+	long	max;
+
+	min = 10;
+	max = 15;
+	tab = ft_range(min, max);
+	for (size_t i = 0; i < max - min; i++)
+	{
+		printf("%d\n", tab[i]);
+	}
+
+	printf("\n\n");
+	
+	min = -10;
+	max = 15;
+	tab = ft_range(min, max);
+	for (size_t i = 0; i < max - min; i++)
+	{
+		printf("%d\n", tab[i]);
+	}
 }

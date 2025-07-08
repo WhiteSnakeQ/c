@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 07:05:58 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 23:56:52 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 20:28:12 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*create_str(int size)
 	return (str);
 }
 
-int	convert(long nbr, char *base, int size, char **str_to_ret)
+void	convert(long nbr, char *base, int size, char **str_to_ret)
 {
 	char	*next_char;
 
@@ -59,7 +59,7 @@ void	str_reverse(char **str, int size)
 	}
 }
 
-char	*convert_dec_to_str(int nbr, char *base, int base_lens)
+char	*convert_dec_to_str(long nbr, char *base, int base_lens)
 {
 	int		str_size;
 	int		positive;
@@ -99,8 +99,8 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	i = 0;
 	size_f = str_len(base_from);
 	size_to = str_len(base_to);
-	if (is_valid_base(base_from, size_f) && is_valid_base(base_to, size_to))
-		return (0);
+	if (is_valid_base(base_from, size_f) || is_valid_base(base_to, size_to))
+		return ((void *)0);
 	while ((nbr[i] >= 9 && nbr[i] <= 13) || nbr[i] == 32)
 		i++;
 	while (nbr[i] == '+' || nbr[i] == '-')
@@ -119,7 +119,33 @@ int	main(void)
 {
 	char	*str;
 
-	str = ft_convert_base("-+++--101010", "01", "0123456789");
-	printf("%s\n", str);
-	free(str);
+	str = ft_convert_base("-+++--101010", "0123456789", "0123456789");
+	if (str)
+	{
+		printf("%s\n", str);
+		free(str);
+	}
+
+	str = ft_convert_base("21474836475", "0123456789", "0123456789");
+	if (str)
+	{
+		printf("%s\n", str);
+		free(str);
+	}
+	
+		
+
+	str = ft_convert_base("-21474836484", "0123456789", "0123456789");
+	if (str)
+	{
+		printf("%s\n", str);
+		free(str);
+	}
+
+	str = ft_convert_base("-+++--101010", "0123456789", "0123456789");
+	if (str)
+	{
+		printf("%s\n", str);
+		free(str);
+	}
 }

@@ -6,9 +6,11 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:10:16 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 22:10:36 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:52:21 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "stdio.h"
 
 int	found_sqrt(long nb, long m, int change, int try)
 {
@@ -37,4 +39,28 @@ int	ft_sqrt(int nb)
 	if (nb1 == 1)
 		return (1);
 	return (found_sqrt(nb1, nb1 / 2, nb1 / 4, 0));
+}
+
+int	main(void)
+{
+	int	i;
+
+	i = 4;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 9;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 16;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 3;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 0;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = -1;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 2;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 1;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
+	i = 144;
+	printf("sqrt of %d = %d\n", i, ft_sqrt(i));
 }

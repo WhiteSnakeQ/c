@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 06:57:59 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 22:12:32 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:54:28 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,16 @@ int	ft_is_prime(int nbr)
 			return (0);
 	}
 	return (1);
+}
+
+int	main(void)
+{
+	int	i;
+
+	i = -2;
+	while (++i < 50)
+	{
+		if (ft_is_prime(i) == 1)
+			printf("%d is prime\n", i);
+	}
 }

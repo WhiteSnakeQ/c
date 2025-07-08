@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:57:08 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 06:24:55 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 20:15:08 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = -1;
 	if (!strs || !*strs || size <= 0)
 	{
-		res_str = malloc(sizeof(char));
+		res_str = malloc(sizeof(char *));
 		res_str[0] = '\0';
 		return (res_str);
 	}
@@ -85,16 +85,16 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (res_str);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	*strs[5];
-
-	strs[0] = "qwer";
-	strs[1] = "qwesfsefsefr";
-	strs[2] = "\0";
-	
 	char	*str;
-	str = ft_strjoin(2, strs, " , ");
+
+	if (argc < 3)
+		return (0);
+	printf("Size - %d\n", argc - 2);
+	printf("Sep - %s\n", argv[1]);
+	str = ft_strjoin(argc - 2, &argv[2], argv[1]);
 	printf("%s\n", str);
 	free(str);
+	return (0);
 }

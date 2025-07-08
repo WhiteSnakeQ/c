@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 07:06:34 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/04 23:52:02 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 20:25:04 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	is_valid_base(char *base, int base_lens)
 	i = -1;
 	if (!base || base_lens < 2)
 		return (1);
-	while (base && ++i < base_lens)
+	while (++i < base_lens)
 	{
 		curr = i;
 		if (base[i] == '+' || base[i] == '-')
 			return (1);
-		if (base[i] < 32 || base[i] > 126)
+		if (base[i] < 33 || base[i] > 126)
 			return (1);
 		while (++curr < base_lens)
 		{
@@ -58,7 +58,7 @@ int	find_char(char *str, char to_find)
 	return (-1);
 }
 
-int	get_dec_fr_base(int base_val, int mult_c, int base_lens)
+long	get_dec_fr_base(int base_val, int mult_c, int base_lens)
 {
 	if (mult_c > 0)
 		return (get_dec_fr_base(base_val, --mult_c, base_lens) * base_lens);
