@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:44:35 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 11:30:24 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:31:57 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int replace;
+	int	replace;
 
 	replace = *a;
 	*a = *b;
