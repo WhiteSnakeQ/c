@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 03:32:53 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 04:45:51 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:17:33 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_print_combn(int size)
 {
 	char	numb[11];
 
-	if (size > 10)
+	if (size > 10 || size < 1)
 		return ;
 	fill_str(numb, size);
 	while (numb[0] < 11 - size + '0')

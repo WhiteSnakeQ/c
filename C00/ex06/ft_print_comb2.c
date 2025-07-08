@@ -6,52 +6,63 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 02:45:33 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 03:09:35 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:17:00 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
 
-void	put_string(char *str1, char *str2)
+void	ft_putnbr(int n)
 {
-	static char	delim = 0;
+	long	numb;
+	char	last_nbr;
 
-	if (delim == 0)
-		delim++;
-	else
+	numb = n;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		numb = -numb;
+	}
+	if (numb > 9)
+		ft_putnbr(numb / 10);
+	last_nbr = numb % 10 + '0';
+	write(1, &last_nbr, 1);
+}
+
+void	put_numbers(int digit1, int digit2)
+{
+	static int	delim = 0;
+
+	if (delim++ > 0)
 		write(1, ", ", 2);
-	write(1, &str1[0], 1);
-	write(1, &str1[1], 1);
+	if (digit1 > 9)
+		ft_putnbr(digit1);
+	else
+	{
+		ft_putnbr(0);
+		ft_putnbr(digit1);
+	}
 	write(1, " ", 1);
-	write(1, &str2[0], 1);
-	write(1, &str2[1], 1);
+	if (digit2 > 9)
+		ft_putnbr(digit2);
+	else
+	{
+		ft_putnbr(0);
+		ft_putnbr(digit2);
+	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	first[3];
-	char	second[3];
+	int	first;
+	int	second;
 
-	first[0] = '0';
-	first[1] = '0';
-	while (first[0] < '9' || first[1] < '9')
+	first = -1;
+	while (++first < 99)
 	{
-		second[1] = first[1] + 1;
-		second[0] = first[0];
-		while (second[0] <= '9' && second[1] <= 58)
-		{
-			put_string(first, second);
-			if (++second[1] == 58)
-			{
-				second[0]++;
-				second[1] = '0';
-			}
-		}
-		if (++first[1] == 58)
-		{
-			first[0]++;
-			first[1] = '0';
-		}
+		second = first;
+		while (++second < 100)
+			put_numbers(first, second);
 	}
 	write(1, "\n", 1);
 }
