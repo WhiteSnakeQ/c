@@ -6,11 +6,9 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:09:36 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 19:12:47 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:21:59 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "stdio.h"
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {

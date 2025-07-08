@@ -6,17 +6,15 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:06:39 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 19:33:53 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:21:41 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-
 void	ft_swap(int *a, int *b)
 {
-	int replace;
+	int temp;
 
-	replace = *a;
+	temp = *a;
 	*a = *b;
-	*b = replace;
+	*b = temp;
 }

@@ -6,22 +6,17 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:17:45 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 19:25:47 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:23:18 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
 
 void	ft_putstr(char *str)
-{
-	int i;
+{	
+	int	i;
 
 	i = 0;
-	while (str && str[i])
+	while (str[i])
 		write(1, &str[i++], 1);
-}
-
-int	main(void)
-{
-	ft_putstr("Lelele");
 }
