@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 02:45:33 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 14:53:03 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 16:37:46 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,9 @@ void	ft_print_comb2(void)
 			put_numbers(first, second);
 	}
 	write(1, "\n", 1);
+}
+
+int	main(void)
+{
+	ft_print_comb2();
 }

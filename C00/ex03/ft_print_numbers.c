@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 01:50:42 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 14:49:34 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 16:32:23 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,10 @@ void	ft_print_numbers(void)
 	numb = 47;
 	while (numb++ < 57)
 		write(1, &numb, 1);
+}
+
+int	main(void)
+{
+	ft_print_numbers();
+	write(1, "\n", 1);
 }
