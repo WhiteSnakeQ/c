@@ -6,16 +6,16 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:23:20 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 20:29:26 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:45:18 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_uppercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	int	i;
 
 	i = -1;
-	while (str && str[++i])
+	while (str[++i])
 	{
 		if ((str[i] < 32 || str[i] > 126))
 			return (0);

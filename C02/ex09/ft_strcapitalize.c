@@ -6,13 +6,11 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:34:24 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 00:48:51 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:46:05 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-
-int	get_type_char(char	str)
+int	get_type_char(char str)
 {
 	if (str >= '0' && str <= '9')
 		return (3);
@@ -39,7 +37,7 @@ void	make_world(char *str, int *i)
 	}
 }
 
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int	index;
 
@@ -50,5 +48,5 @@ char *ft_strcapitalize(char *str)
 			make_world(str, &index);
 		index++;
 	}
-	return(str);
+	return (str);
 }

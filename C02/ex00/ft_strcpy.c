@@ -6,14 +6,11 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:03:07 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 20:14:50 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:43:40 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "stdio.h"
-
-char *ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	index;
 
@@ -21,6 +18,5 @@ char *ft_strcpy(char *dest, char *src)
 	while (src[++index])
 		dest[index] = src[index];
 	dest[index] = '\0';
-
-	return(dest);
+	return (dest);
 }

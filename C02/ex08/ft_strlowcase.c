@@ -6,16 +6,16 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:29:52 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 20:33:05 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:45:06 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strlowcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str && str[i])
+	i = -1;
+	while (str[++i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;

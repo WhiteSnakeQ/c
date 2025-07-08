@@ -6,11 +6,11 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 00:50:21 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 01:27:25 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:45:13 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int str_len(char *str)
+unsigned int	str_len(char *str)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ unsigned int str_len(char *str)
 	return (i);
 }
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	int	index;
 	int	res;

@@ -6,97 +6,89 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 01:37:24 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/02 03:35:31 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:39:58 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
 #include "stdio.h"
 
-void	conv_dec_to_hex(unsigned long long addr_dec, char *hex_tab, int iter)
+#define BINARYSIZE 256
+#define LINESIZE 16
+#define HEXTAB "0123456789abcdef"
+#define BASESIZE 16
+
+void	put_hex_char(unsigned long dec, int digit)
 {
-	if (addr_dec > 16)
-		conv_dec_to_hex(addr_dec / 16, hex_tab, ++iter);
-	else
-		if (iter == 0)
-			write(1, "0", 1);
-	write(1, &hex_tab[addr_dec % 16], 1);
+	if (digit == 0 && dec < 16)
+		write(1, "0", 1);
+	if (dec >= 16)
+		put_hex_char(dec / 16, digit + 1);
+	write(1, &HEXTAB[dec % BASESIZE], 1);
 }
 
-void	print_hex_decimal(unsigned long long addr_dec)
+void	put_address(char *str)
 {
-	unsigned long long	check_zero;
-	int					i;
+	int	byt_shift;
 
-	i = 0;
-	check_zero = addr_dec;
-	while (i++ < 14)
+	byt_shift = 64;
+	while (byt_shift > 0)
 	{
-		if (check_zero < 16)
-			write(1, "0", 1);
-		check_zero /= 16;
+		byt_shift -= 8;
+		put_hex_char(((unsigned long)str >> byt_shift) % BINARYSIZE, 0);
 	}
-	conv_dec_to_hex(addr_dec, "0123456789abcdef", 0);
 	write(1, ": ", 2);
 }
 
-void	print_hex_text(unsigned char *text, int size)
+void	put_hex_values(char *str, int size)
 {
 	int	i;
 
-	i = -1;
-	while (++i < 16)
+	i = 0;
+	while (size > i && i < LINESIZE)
 	{
-		if (size > i)
-			conv_dec_to_hex((unsigned long long)text[i], "0123456789abcdef", 0);
-		else
-			write(1, "  ", 2);
-		if (i % 2 == 1)
+		put_hex_char((unsigned char)str[i], 0);
+		if (i++ % 2 == 1)
+			write(1, " ", 1);
+	}
+	while (i < LINESIZE)
+	{
+		write(1, "  ", 2);
+		if (i++ % 2 == 1)
 			write(1, " ", 1);
 	}
 }
 
-void	print_text(unsigned char *text, int size)
+void	put_text(char *str, int size)
 {
 	int	i;
 
-	i = -1;
-	while (size > ++i)
+	i = 0;
+	while (size > i && i < LINESIZE)
 	{
-		if (text[i] < 32 || text[i] > 126)
+		if (str[i] < 32 || str[i] == 127)
 			write(1, ".", 1);
 		else
-			write(1, &text[i], 1);
+			write(1, &str[i], 1);
+		i++;
 	}
 	write(1, "\n", 1);
 }
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	unsigned char		*text;
-	unsigned int		i;
-	int					size_print;
-
-	i = 0;
-	text = (unsigned char*)addr;
-	while (size > i)
-	{
-		if (size > i + 16)
-			size_print = 16;
-		else
-			size_print = size - i;
-		print_hex_decimal((unsigned long long)&text[i]);
-		print_hex_text(&text[i], size_print);
-		print_text(&text[i], size_print);
-		i += 16;
-	}
-	return (addr);
-}
-
-int	main(void)
-{
 	char	*str;
 
-	str = "\nA new take on Aesops classic fable, and one of the most memorable stories for kids. When a shepherds youngest son is asked watch a flock of sheep, he cant help but find it breathtakingly booooooooooring. So to drum up a little “fun”, he decides to shout for the villagers to save him from a wolf hiding in a tree. When the villagers hear him shouting and come running, they dont find a wolf, just the boy rolling on the ground laughing. Having too much fun to stop now, he yells to the villagers again and again, each time with a new lie. The wolf is attacking from underground! From a hot air balloon! From a submarine! The wolf says to bring me cookies! Finally the villagers stop coming altogether, tired of being tricked. And that wouldnt be such a problem, if the wolf didnt decide to attack the flock right then and there… This rhyming story for kids is a quick, fun, fable with a modern twist. ";
-	ft_print_memory(str, 907);
+	str = (char *)addr;
+	while (size > 0)
+	{
+		put_address(str);
+		put_hex_values(str, size);
+		put_text(str, size);
+		if (size < 16)
+			break ;
+		size -= LINESIZE;
+		str += LINESIZE;
+	}
+	return (addr);
 }

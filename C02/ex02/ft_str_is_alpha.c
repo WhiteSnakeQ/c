@@ -6,18 +6,16 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:18:44 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/01 20:22:42 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:44:31 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-
-int ft_str_is_alpha(char *str)
+int	ft_str_is_alpha(char *str)
 {
 	int	i;
 
 	i = -1;
-	while (str && str[++i])
+	while (str[++i])
 	{
 		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
 			return (0);
