@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 03:32:53 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 11:17:33 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:47:17 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_str(char *str, int size)
 	while (i < size)
 		write(1, &str[i++], 1);
 }
-		
+
 void	next_numb(char *str, int index)
 {
 	if (str[index - 1] == '9' && index > 1)

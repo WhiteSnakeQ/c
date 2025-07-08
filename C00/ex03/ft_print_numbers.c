@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 01:50:42 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 11:19:39 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:47:20 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_numbers(void)
 {
-	char numb;
+	char	numb;
 
 	numb = 47;
 	while (numb++ < 57)
