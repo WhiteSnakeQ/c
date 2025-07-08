@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 02:45:33 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 11:17:00 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:53:03 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,26 @@ void	ft_putnbr(int n)
 	write(1, &last_nbr, 1);
 }
 
+void	put_numb(int digit)
+{
+	if (digit > 9)
+		ft_putnbr(digit);
+	else
+	{
+		ft_putnbr(0);
+		ft_putnbr(digit);
+	}
+}
+
 void	put_numbers(int digit1, int digit2)
 {
 	static int	delim = 0;
 
 	if (delim++ > 0)
 		write(1, ", ", 2);
-	if (digit1 > 9)
-		ft_putnbr(digit1);
-	else
-	{
-		ft_putnbr(0);
-		ft_putnbr(digit1);
-	}
+	put_numb(digit1);
 	write(1, " ", 1);
-	if (digit2 > 9)
-		ft_putnbr(digit2);
-	else
-	{
-		ft_putnbr(0);
-		ft_putnbr(digit2);
-	}
+	put_numb(digit2);
 }
 
 void	ft_print_comb2(void)
