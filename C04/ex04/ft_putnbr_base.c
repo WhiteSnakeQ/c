@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 06:50:10 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/09 20:23:52 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 20:56:45 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,5 @@ int	main(void)
 	printf("(nothing)\n\n");
 
 	ft_putnbr_base(-41231232, "012345678 9q\\wertyuio");
-	printf("(nothing)\n");
+	printf("\n");
 }
