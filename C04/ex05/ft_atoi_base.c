@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 20:55:03 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 19:37:54 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 20:25:13 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	is_valid_base(char *base, int size)
 	int	curr;
 
 	i = -1;
-	if (!base || size < 2)
+	if (size < 2)
 		return (1);
-	while (base && ++i < size)
+	while (++i < size)
 	{
 		curr = i;
 		if (base[i] == '+' || base[i] == '-')
@@ -31,7 +31,6 @@ int	is_valid_base(char *base, int size)
 		{
 			if (base[curr] == base[i])
 				return (1);
-			curr ++;
 		}
 	}
 	return (0);

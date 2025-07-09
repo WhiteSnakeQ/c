@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 06:29:08 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 19:33:56 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:49:47 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,12 @@ int	main(void)
 
 	{
 		char	*str = "";
+		printf("%s  : %d\n", str, ft_atoi(str));
+		printf("\n");
+	}
+
+	{
+		char	*str = "\r\r\f\f\v\v\t\t\n\n  -+++++++++-42a124135";
 		printf("%s  : %d\n", str, ft_atoi(str));
 		printf("\n");
 	}
