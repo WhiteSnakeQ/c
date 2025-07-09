@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:28:41 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 17:09:00 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:41:26 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,25 @@ void	ft_rev_int_tab(int *tab, int size)
 
 int	main(void)
 {
-	int	tab[] = {1, 2, 3, 4, 5, 6, 7};
-	int tab2[] = {1, 2, 3, 4, 5, 6};
+	int	tab[] = {1, 2, 3};
+	int tab2[] = {1, 2, 3, 4};
 
-	printf("int arr size = 7\n");
-	for (size_t i = 0; i < 7; i++)
+	int	d = 3;
+	printf("int arr size = %d\n", d);
+	for (int i = 0; i < d; i++)
 		printf("%d ", tab[i]);
-	printf("\n\nint arr rev = 7\n");
-	ft_rev_int_tab(tab, 7);
-	for (size_t i = 0; i < 7; i++)
+	printf("\n\nint arr rev = %d\n", d);
+	ft_rev_int_tab(tab, d);
+	for (int i = 0; i < d; i++)
 		printf("%d ", tab[i]);
 
-
-	printf("\n\nint arr size = 6\n");
-	for (size_t i = 0; i < 6; i++)
+	d = 4;
+	printf("\n\nint arr size = %d\n", d);
+	for (int i = 0; i < d; i++)
 		printf("%d ", tab2[i]);
-	printf("\n\nint arr rev = 6\n");
-	ft_rev_int_tab(tab2, 6);
-	for (size_t i = 0; i < 6; i++)
+	printf("\n\nint arr rev = %d\n", d);
+	ft_rev_int_tab(tab2, d);
+	for (int i = 0; i < d; i++)
 		printf("%d ", tab2[i]);
 	printf("\n");
 
