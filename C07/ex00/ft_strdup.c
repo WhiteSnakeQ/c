@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:20:30 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 19:59:31 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 21:59:53 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char *ft_strdup(char *src)
 
 	i = -1;
 	size = str_len(src);
-	dup = malloc((size * sizeof(char)) + sizeof(char));
+	dup = malloc((size + 1) * sizeof(char));
 	if (!dup)
 		return (NULL);
 	dup[size] = '\0';

@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:57:08 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 20:15:08 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/09 22:08:29 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = -1;
 	dest_len = str_len(dest);
-	while (src && src[++i] != '\0')
+	while (src && src[++i])
 		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
 	return (dest);
@@ -54,7 +54,7 @@ char	*create_str(int size)
 	char	*str;
 	int		i;
 
-	str = malloc((size * sizeof(char)) + sizeof(char));
+	str = malloc((size  + 1) * sizeof(char));
 	i = -1;
 	while (str && ++i < size)
 		str[i] = '\0';
@@ -68,7 +68,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 
 	i = -1;
-	if (!strs || !*strs || size <= 0)
+	if (size <= 0)
 	{
 		res_str = malloc(sizeof(char *));
 		res_str[0] = '\0';
