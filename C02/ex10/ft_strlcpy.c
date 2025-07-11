@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 00:50:21 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 18:10:02 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/10 19:25:16 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	res = str_len(src);
 	if (size == 0)
 		return (res);
-	while (src && src[index] && index + 1 < size)
+	while (src[index] && index + 1 < size)
 	{
 		dest[index] = src[index];
 		index++;

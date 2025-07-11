@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 05:57:08 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/09 22:08:29 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/10 20:30:41 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	*create_str(int size)
 	int		i;
 
 	str = malloc((size  + 1) * sizeof(char));
+	if (!str)
+		return (str);
 	i = -1;
 	while (str && ++i < size)
 		str[i] = '\0';
@@ -71,12 +73,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size <= 0)
 	{
 		res_str = malloc(sizeof(char *));
-		res_str[0] = '\0';
+		if (res_str)
+			res_str[0] = '\0';
 		return (res_str);
 	}
 	strs_l = strs_len(strs, size) + (str_len(sep) * (size - 1));
 	res_str = create_str(strs_l);
-	while (++i < size)
+	while (res_str && ++i < size)
 	{
 		ft_strcat(res_str, strs[i]);
 		if (i + 1 < size)
@@ -95,6 +98,7 @@ int	main(int argc, char **argv)
 	printf("Sep - %s\n", argv[1]);
 	str = ft_strjoin(argc - 2, &argv[2], argv[1]);
 	printf("%s\n", str);
-	free(str);
+	if (str)
+		free(str);
 	return (0);
 }

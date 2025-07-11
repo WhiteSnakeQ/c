@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 20:34:24 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 17:58:12 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/10 19:25:26 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strcapitalize(char *str)
 	int	index;
 
 	index = 0;
-	while (str && str[index])
+	while (str[index])
 	{
 		if (get_type_char(str[index]))
 			make_world(str, &index);

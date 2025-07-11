@@ -6,19 +6,25 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:17:45 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 17:00:17 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/10 19:19:27 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
 
-void	ft_putstr(char *str)
+int	str_len(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-		write(1, &str[i++], 1);
+		i++;
+	return (i);
+}
+
+void	ft_putstr(char *str)
+{
+	write(1, str, str_len(str));
 }
 
 int	main(void)
