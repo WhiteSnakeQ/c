@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 01:27:42 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 18:11:22 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/12 22:53:32 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,33 @@ void	put_char(char c)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		index;
+	int				index;
+	unsigned char	*str2;
 
 	index = -1;
-	while (str && str[++index])
+	str2 = (unsigned char *)str;
+	while (str2 && str2[++index])
 	{
-		if (str[index] >= 32 && str[index] <= 126)
+		if (str2[index] >= 32 && str2[index] <= 126)
 		{
-			put_char(str[index]);
+			put_char(str2[index]);
 		}
-		else if (str[index] < 32 || str[index] == 127)
+		else if (str2[index] < 32 || str2[index] == 127)
 		{
 			put_char('\\');
-			put_char(HEXTAB[str[index] / 16]);
-			put_char(HEXTAB[str[index] % 16]);
+			put_char(HEXTAB[str2[index] / 16]);
+			put_char(HEXTAB[str2[index] % 16]);
 		}
 	}
 }
 
 int	main(void)
 {
+	char str[40] = "qwewqe";
+
+	str[2] = -49;
 	ft_putstr_non_printable("Coucou\ntu vas bien ?");
 	write(1, "\n", 1);
-	ft_putstr_non_printable("He\vll\to wo\br\tld\n");
+	ft_putstr_non_printable(str);
 	write(1, "\n", 1);
 }
