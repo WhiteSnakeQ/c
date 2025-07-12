@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 03:32:53 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 16:44:24 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/12 22:54:31 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_print_combn(int size)
 		print_str(numb, size, delim++);
 		next_numb(numb, size);
 	}
-	write(1, "\n", 1);
 }
 
 int	main(void)

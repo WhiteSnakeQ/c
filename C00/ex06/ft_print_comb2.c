@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 02:45:33 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/08 16:37:46 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/12 22:55:12 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ void	put_numb(int digit)
 
 void	put_numbers(int digit1, int digit2)
 {
-	static int	delim = 0;
-
-	if (delim++ > 0)
+	if (!(digit1 == 0 && digit2 == 1))
 		write(1, ", ", 2);
 	put_numb(digit1);
 	write(1, " ", 1);
@@ -63,7 +61,6 @@ void	ft_print_comb2(void)
 		while (++second < 100)
 			put_numbers(first, second);
 	}
-	write(1, "\n", 1);
 }
 
 int	main(void)
