@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 09:16:50 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/06 00:54:18 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/12 23:10:22 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	put_str(char *str, int fd, int size)
 void	print_err(char *program_name, char *file_name)
 {
 	put_str(program_name, STDERR_FILENO, -1);
-	put_str(": ", STDERR_FILENO, 3);
+	put_str(": ", STDERR_FILENO, 2);
 	put_str(file_name, STDERR_FILENO, -1);
-	put_str(": ", STDERR_FILENO, 3);
+	put_str(": ", STDERR_FILENO, 2);
 	put_str(strerror(errno), STDERR_FILENO, -1);
-	put_str("\n", STDERR_FILENO, 2);
+	put_str("\n", STDERR_FILENO, 1);
 }
 
 void	cat_f(char *program_name, char *file_name)

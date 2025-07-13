@@ -6,12 +6,12 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 04:02:18 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/06 00:39:01 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/12 22:59:55 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
-#include <fcntl.h>
+#include "fcntl.h"
 #include "stdio.h"
 
 void	put_str(char *str, int fd, int size)
@@ -36,12 +36,12 @@ int	check_argv(int argc)
 	err = 0;
 	if (argc == 1)
 	{
-		put_str("File name missing.\n", STDERR_FILENO, 20);
+		put_str("File name missing.\n", STDERR_FILENO, 19);
 		err = 1;
 	}
 	if (argc > 2)
 	{
-		put_str("Too many arguments.\n", STDERR_FILENO, 21);
+		put_str("Too many arguments.\n", STDERR_FILENO, 20);
 		err = 1;
 	}
 	return (err);
@@ -53,7 +53,7 @@ int	open_file(char *f_name)
 
 	fd = open(f_name, O_RDONLY);
 	if (fd < 0)
-		put_str("Cannot read file.\n", STDERR_FILENO, 19);
+		put_str("Cannot read file.\n", STDERR_FILENO, 18);
 	return (fd);
 }
 
