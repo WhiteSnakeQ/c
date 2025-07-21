@@ -6,7 +6,7 @@
 /*   By: kreys <kreys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:59:11 by kreys             #+#    #+#             */
-/*   Updated: 2025/07/05 01:50:00 by kreys            ###   ########.fr       */
+/*   Updated: 2025/07/21 05:39:25 by kreys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,22 @@ int	get_size_of_world(char *str, char *charset)
 		if (find_char(charset, str[i]) >= 0)
 			return (i);
 	}
-	return (i - 1);
+	return (i);
 }
 
 int	get_size_str(char *str, char *charset)
 {
 	int		j;
 	int		i;
+	int		len;
 	int		size_strs;
 
 	i = -1;
 	size_strs = 0;
-	while (str && str[++i])
+	len = 0;
+	while (str[len])
+		len++;
+	while (str && ++i < len)
 	{
 		j = get_size_of_world(&str[i], charset);
 		if (j >= 0)
@@ -100,12 +104,14 @@ char	**ft_split(char *str, char *charset)
 	return (strs);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	int		i;
 	char	**strs;
 
-	strs = ft_split("  897989 98797868786868788 67 7 7 7 7 ",", ");
+	if (argc != 3)
+		return (0);
+	strs = ft_split(argv[1], argv[2]);
 	i = 0;
 	while (strs[i])
 	{
